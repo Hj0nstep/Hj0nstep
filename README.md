@@ -6,7 +6,6 @@
 
 Olá, me chamo Jonas Henrique, tenho 34 anos e sou natural do Rio de Janeiro.
 
-Durante o curso, estou aprendendo as principais tecnologias para a criação de sites e aplicações web, como:
 * HTML e CSS: Para estruturar e estilizar páginas web.
 * JavaScript e React: Para criar interfaces dinâmicas e interativas.
 * Node.js e Git/GitHub: Para entender o funcionamento do back-end e para versionamento de código.
