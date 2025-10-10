@@ -6,8 +6,6 @@
 
 Olá, me chamo Jonas Henrique, tenho 34 anos e sou natural do Rio de Janeiro.
 
-Sou um apaixonado por tecnologia iniciando minha jornada na área de desenvolvimento web. Atualmente, estou aprofundando meus conhecimentos no curso de Formação tecnica em Desenvolvimento Web da Aceleradora Inclusiva, um programa realizado em parceria com grandes nomes como a PUCRS, Thoughtworks e a Globo.
-
 Durante o curso, estou aprendendo as principais tecnologias para a criação de sites e aplicações web, como:
 * HTML e CSS: Para estruturar e estilizar páginas web.
 * JavaScript e React: Para criar interfaces dinâmicas e interativas.
