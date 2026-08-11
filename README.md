@@ -35,10 +35,10 @@ Tô muito animado pra usar tudo que tô aprendendo em projetos de verdade e, aos
 
 <div align="center">
 
-<img height="165px" src="https://github-readme-stats.vercel.app/api?username=Hj0nstep&show_icons=true&include_all_commits=true&locale=pt-br&hide_border=true&bg_color=0D0D0F&title_color=E5E5EA&icon_color=9A9AA2&text_color=C9C9CF&ring_color=9A9AA2" alt="Estatísticas do GitHub" />
-<img height="165px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hj0nstep&layout=compact&langs_count=9&hide_border=true&bg_color=0D0D0F&title_color=E5E5EA&text_color=C9C9CF" alt="Linguagens mais usadas" />
+<img height="165px" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Hj0nstep&show_icons=true&include_all_commits=true&locale=pt-br&hide_border=true&bg_color=0D0D0F&title_color=E5E5EA&icon_color=9A9AA2&text_color=C9C9CF&ring_color=9A9AA2" alt="Estatísticas do GitHub" />
+<img height="165px" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Hj0nstep&layout=compact&langs_count=9&hide_border=true&bg_color=0D0D0F&title_color=E5E5EA&text_color=C9C9CF" alt="Linguagens mais usadas" />
 
-<img height="165px" src="https://github-readme-streak-stats.demolab.com/?user=Hj0nstep&hide_border=true&background=0D0D0F&ring=9A9AA2&fire=E5E5EA&currStreakLabel=C9C9CF&sideLabels=C9C9CF&currStreakNum=E5E5EA&sideNums=E5E5EA&dates=6E6E76" alt="Sequência de contribuições" />
+<img height="165px" src="https://streak-stats.demolab.com/?user=Hj0nstep&hide_border=true&background=0D0D0F&ring=9A9AA2&fire=E5E5EA&currStreakLabel=C9C9CF&sideLabels=C9C9CF&currStreakNum=E5E5EA&sideNums=E5E5EA&dates=6E6E76" alt="Sequência de contribuições" />
 
 <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Hj0nstep&bg_color=0D0D0F&color=E5E5EA&line=9A9AA2&point=FFFFFF&area=true&hide_border=true" alt="Gráfico de atividade" />
 
