@@ -11,8 +11,6 @@
 * Node.js e Git/GitHub: Para entender o funcionamento do back-end e para versionamento de código.
 * Python, SQL e Java: explorando automação, dados e aplicações desktop em projetos pessoais e acadêmicos.
 
-Tô muito animado pra usar tudo que tô aprendendo em projetos de verdade e, aos poucos, construir meu caminho na área de tecnologia
-
 <br/>
 
 ### 🚀 Projetos em destaque
