@@ -15,6 +15,7 @@
 
 ### 🚀 Projetos em destaque
 
+* 🔒 **APEX EV+** *(privado)* — motor de decisão estatística para apostas esportivas ao vivo, em Python/PyQt6. → [Ver a interface](https://hj0nstep.github.io/apex-ev-interface/)
 * **[sistema-leiloes](https://github.com/Hj0nstep/sistema-leiloes)** — sistema de leilões em Java (Swing/JDBC), projeto acadêmico (SENAC).
 * **[Projeto-Integrado-II-InfoTechG](https://github.com/Hj0nstep/Projeto-Integrado-II-InfoTechG)** — sistema de gestão para loja de assistência técnica, Java (SENAC).
 
