@@ -1,0 +1,42 @@
+<svg width="300" height="195" viewBox="0 0 300 195" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Ubuntu, Sans-Serif">
+  <title>My Programming Languages (inclui repositórios privados)</title>
+  <rect x="0.5" y="0.5" width="299" height="194" rx="14" fill="#0D0D0F" stroke="#26262b" />
+
+  <text x="20" y="32" font-size="16" font-weight="600" fill="#E5E5EA">My Programming Languages</text>
+  <text x="20" y="50" font-size="10" fill="#6E6E76">calculado com repositórios públicos + privados</text>
+
+  <clipPath id="barClip">
+    <rect x="20" y="66" width="260" height="10" rx="5" />
+  </clipPath>
+  <g clip-path="url(#barClip)">
+    <rect x="20"  y="66" width="199" height="10" fill="#3572A5" />
+    <rect x="219" y="66" width="51"  height="10" fill="#e34c26" />
+    <rect x="270" y="66" width="4"   height="10" fill="#b07219" />
+    <rect x="274" y="66" width="4"   height="10" fill="#f1e05a" />
+    <rect x="278" y="66" width="2"   height="10" fill="#563d7c" />
+  </g>
+
+  <g font-size="12">
+    <circle cx="24" cy="103" r="5" fill="#3572A5" />
+    <text x="36" y="107" fill="#E5E5EA">Python</text>
+    <text x="115" y="107" fill="#9A9AA2">76.5%</text>
+
+    <circle cx="160" cy="103" r="5" fill="#e34c26" />
+    <text x="172" y="107" fill="#E5E5EA">HTML</text>
+    <text x="240" y="107" fill="#9A9AA2">19.7%</text>
+
+    <circle cx="24" cy="127" r="5" fill="#b07219" />
+    <text x="36" y="131" fill="#E5E5EA">Java</text>
+    <text x="115" y="131" fill="#9A9AA2">1.6%</text>
+
+    <circle cx="160" cy="127" r="5" fill="#f1e05a" />
+    <text x="172" y="131" fill="#E5E5EA">JavaScript</text>
+    <text x="240" y="131" fill="#9A9AA2">1.6%</text>
+
+    <circle cx="24" cy="151" r="5" fill="#563d7c" />
+    <text x="36" y="155" fill="#E5E5EA">CSS</text>
+    <text x="115" y="155" fill="#9A9AA2">0.7%</text>
+  </g>
+
+  <text x="20" y="180" font-size="9" fill="#4B4B52">Python: apex-ev-plus-v7 (privado) · Java: SENAC · gerado 2026-08-11</text>
+</svg>
