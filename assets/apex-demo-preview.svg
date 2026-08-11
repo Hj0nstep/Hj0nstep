@@ -1,0 +1,71 @@
+<svg width="900" height="460" viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Ubuntu, Sans-Serif">
+  <title>APEX EV+ — interface interativa (clique pra abrir)</title>
+
+  <rect x="0.5" y="0.5" width="899" height="459" rx="18" fill="#0a0a0d" stroke="#26262b" />
+
+  <!-- eyebrow -->
+  <rect x="28" y="26" width="230" height="24" rx="12" fill="rgba(217,164,65,0.13)" stroke="rgba(217,164,65,0.3)" />
+  <circle cx="42" cy="38" r="3.5" fill="#4fd1a5" />
+  <text x="52" y="42" font-size="10.5" letter-spacing="1" fill="#d9a441" font-family="'Cascadia Mono', Consolas, monospace">INTERFACE INTERATIVA</text>
+
+  <!-- title -->
+  <text x="28" y="112" font-size="52" font-weight="800" fill="#ededef" letter-spacing="-1">APEX <tspan fill="#d9a441">EV+</tspan></text>
+  <text x="30" y="140" font-size="15.5" fill="#9a9aa2">Motor de decisão estatística para apostas esportivas ao vivo</text>
+
+  <!-- stat strip -->
+  <g font-family="'Cascadia Mono', Consolas, monospace">
+    <line x1="28" y1="168" x2="872" y2="168" stroke="#1c1c21" />
+    <text x="28"  y="196" font-size="24" font-weight="700" fill="#ededef">168</text>
+    <text x="28"  y="214" font-size="10.5" fill="#5c5c64">TESTES AUTOMATIZADOS</text>
+
+    <text x="240" y="196" font-size="24" font-weight="700" fill="#ededef">~80k</text>
+    <text x="240" y="214" font-size="10.5" fill="#5c5c64">LINHAS DE PYTHON</text>
+
+    <text x="452" y="196" font-size="24" font-weight="700" fill="#ededef">256.723</text>
+    <text x="452" y="214" font-size="10.5" fill="#5c5c64">RATINGS DE ELO</text>
+
+    <text x="664" y="196" font-size="24" font-weight="700" fill="#ededef">57,3%</text>
+    <text x="664" y="214" font-size="10.5" fill="#5c5c64">ACERTO REAL (DECIDIDAS)</text>
+    <line x1="28" y1="228" x2="872" y2="228" stroke="#1c1c21" />
+  </g>
+
+  <!-- mini board preview -->
+  <text x="28" y="258" font-size="11" letter-spacing="1" fill="#5c5c64" font-family="'Cascadia Mono', Consolas, monospace">🔥 EM ANDAMENTO</text>
+
+  <g font-family="'Cascadia Mono', Consolas, monospace">
+    <!-- card 1 -->
+    <rect x="28" y="270" width="270" height="86" rx="10" fill="#131316" stroke="#26262b" />
+    <circle cx="44" cy="286" r="3" fill="#e2617b" />
+    <text x="52" y="290" font-size="10" font-weight="700" fill="#e2617b">34' AO VIVO</text>
+    <text x="42" y="312" font-size="13.5" font-weight="700" fill="#ededef" font-family="'Segoe UI',sans-serif">River Plate x Boca Juniors</text>
+    <text x="42" y="330" font-size="12" fill="#9a9aa2">0 — 0</text>
+    <text x="42" y="348" font-size="11" fill="#9a9aa2">Under 2.5 · odd 1.85</text>
+    <rect x="222" y="336" width="60" height="17" rx="9" fill="rgba(226,97,123,0.15)" />
+    <text x="252" y="348" font-size="10" font-weight="700" fill="#e2617b" text-anchor="middle">EV -2.1%</text>
+
+    <!-- card 2 -->
+    <rect x="312" y="270" width="270" height="86" rx="10" fill="#131316" stroke="#26262b" />
+    <circle cx="328" cy="286" r="3" fill="#e2617b" />
+    <text x="336" y="290" font-size="10" font-weight="700" fill="#e2617b">22' AO VIVO</text>
+    <text x="326" y="312" font-size="13.5" font-weight="700" fill="#ededef" font-family="'Segoe UI',sans-serif">Man City x Liverpool</text>
+    <text x="326" y="330" font-size="12" fill="#9a9aa2">0 — 0</text>
+    <text x="326" y="348" font-size="11" fill="#9a9aa2">1X2 Casa · odd 2.30</text>
+    <rect x="506" y="336" width="60" height="17" rx="9" fill="rgba(79,209,165,0.15)" />
+    <text x="536" y="348" font-size="10" font-weight="700" fill="#4fd1a5" text-anchor="middle">EV +6.4%</text>
+
+    <!-- card 3 -->
+    <rect x="596" y="270" width="276" height="86" rx="10" fill="#131316" stroke="#26262b" />
+    <circle cx="612" cy="286" r="3" fill="#e2617b" />
+    <text x="620" y="290" font-size="10" font-weight="700" fill="#e2617b">78' AO VIVO</text>
+    <text x="610" y="312" font-size="13.5" font-weight="700" fill="#ededef" font-family="'Segoe UI',sans-serif">Flamengo x Fluminense</text>
+    <text x="610" y="330" font-size="12" fill="#9a9aa2">2 — 1</text>
+    <text x="610" y="348" font-size="11" fill="#9a9aa2">BTTS Não · odd 1.65</text>
+    <rect x="796" y="336" width="60" height="17" rx="9" fill="rgba(79,209,165,0.15)" />
+    <text x="826" y="348" font-size="10" font-weight="700" fill="#4fd1a5" text-anchor="middle">EV +3.8%</text>
+  </g>
+
+  <!-- CTA -->
+  <rect x="28" y="384" width="300" height="42" rx="8" fill="#d9a441" />
+  <text x="178" y="410" font-size="14" font-weight="700" fill="#1a1408" text-anchor="middle" font-family="'Segoe UI',sans-serif">▶ Explorar a interface</text>
+  <text x="28" y="448" font-size="11" fill="#5c5c64" font-family="'Cascadia Mono', Consolas, monospace">clique na imagem — jogos e odds são ilustrativos</text>
+</svg>
