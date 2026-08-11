@@ -11,13 +11,10 @@
 * Node.js e Git/GitHub: Para entender o funcionamento do back-end e para versionamento de código.
 * Python, SQL e Java: explorando automação, dados e aplicações desktop em projetos pessoais e acadêmicos.
 
-Tô muito animado pra usar tudo que tô aprendendo em projetos de verdade e, aos poucos, construir meu caminho na área de tecnologia
-
 <br/>
 
 ### 🚀 Projetos em destaque
 
-* 🔒 **APEX EV+** *(privado)* — aplicativo desktop em Python/PyQt6, motor de decisão estatística com modelos próprios, banco SQLite e ~80 mil linhas de código. Repositório privado por conter dados/uso pessoal. → [**Ver a interface**](https://hj0nstep.github.io/apex-ev-interface/) (recriação visual, dados ilustrativos — o código-fonte real continua fechado)
 * **[sistema-leiloes](https://github.com/Hj0nstep/sistema-leiloes)** — sistema de leilões em Java (Swing/JDBC), projeto acadêmico (SENAC).
 * **[Projeto-Integrado-II-InfoTechG](https://github.com/Hj0nstep/Projeto-Integrado-II-InfoTechG)** — sistema de gestão para loja de assistência técnica, Java (SENAC).
 
