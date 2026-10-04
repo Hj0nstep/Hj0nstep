@@ -10,6 +10,7 @@
 * JavaScript e React: Para criar interfaces dinâmicas e interativas.
 * Node.js e Git/GitHub: Para entender o funcionamento do back-end e para versionamento de código.
 * Python, SQL e Java: explorando automação, dados e aplicações desktop em projetos pessoais e acadêmicos.
+* TypeScript, Electron e PowerShell: aplicativo Windows para organizar canais e sessões TikTok.
 
 <br/>
 
@@ -25,7 +26,7 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,python,java,sqlite,git,github&theme=dark" alt="Stack" />
+<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nodejs,electron,powershell,python,java,sqlite,git,github&theme=dark" alt="HTML, CSS, JavaScript, TypeScript, React, Node.js, Electron, PowerShell, Python, Java, SQLite, Git e GitHub" />
 
 </div>
 
@@ -36,9 +37,9 @@
 <div align="center">
 
 <img height="195px" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Hj0nstep&show_icons=true&include_all_commits=true&locale=pt-br&hide_border=true&bg_color=0D0D0F&title_color=E5E5EA&icon_color=9A9AA2&text_color=C9C9CF&ring_color=9A9AA2" alt="Estatísticas do GitHub" />
-<img height="195px" src="assets/top-langs.svg" alt="Linguagens mais usadas (público + privado)" />
+<img width="340px" src="assets/top-langs.svg" alt="My Programming Languages — linguagens dos repositórios consultados" />
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Hj0nstep&bg_color=0D0D0F&color=E5E5EA&line=9A9AA2&point=FFFFFF&area=true&hide_border=true" alt="Gráfico de atividade" />
+<img width="100%" src="assets/activity.svg" alt="Gráfico de atividade — contribuições reais por dia, com data de atualização" />
 
 </div>
 
@@ -54,6 +55,8 @@
 
 <div align="center">
 
-<img src="https://komarev.com/ghpvc/?username=Hj0nstep&color=0D0D0F&style=flat-square&label=Visitas+no+perfil" alt="Visitas no perfil" />
+<img src="https://visitor-badge.laobi.icu/badge?page_id=Hj0nstep.Hj0nstep&amp;left_text=Visitas%20no%20perfil&amp;left_color=%230D0D0F&amp;right_color=%23E0AA3E" alt="Visitas no perfil — contador dinâmico Visitor Badge" />
+
+<sub>Gráfico de atividade servido pelo próprio repositório. Contador dinâmico Visitor Badge: requisições da imagem, não pessoas únicas; histórico independente do antigo Komarev.</sub>
 
 </div>
