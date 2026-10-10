@@ -22,9 +22,21 @@ I try new technologies by building projects. One of them is a Windows app that h
 
 ## Featured projects
 
-- Private project: details and source code are kept private.
-- Auction system: a Java desktop app built with Swing and JDBC. Source code is private.
-- InfoTechG: a Java app for managing a computer repair shop. Source code is private.
+### Private project
+
+Details and source code are kept private.
+
+### Auction system
+
+A desktop app for organizing products at an auction house. Users can register a product with its name and price, browse the product list, and mark an item as sold. A separate screen lists sold products, making it easier to check which sales have been recorded.
+
+The app uses Java Swing for its screens and JDBC to save and read product records in MySQL. The screens, product data, and database operations are kept in separate classes, so each part has a clear job. Source code is private.
+
+### InfoTechG
+
+A desktop app for a computer store and repair shop. It brings customer records, suppliers, products, sales, and repair orders into one place. Managers, salespeople, and technicians have different responsibilities, so the menu shows the sections each user is allowed to access.
+
+Built with Java Swing and a MySQL database connected through JDBC. Separate classes handle the screens, business data, and database queries. The project also includes requirements, diagrams, and screen sketches to explain how the app is organized. Source code is private.
 
 ## Languages and tools
 
