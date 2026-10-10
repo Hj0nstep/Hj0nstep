@@ -1,4 +1,4 @@
-name: Atualizar gráficos do perfil
+name: Update profile charts
 on:
   workflow_dispatch:
   schedule:
@@ -16,16 +16,16 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '24'
-      - name: Consultar dados e gerar imagens locais
+      - name: Fetch GitHub data and generate local charts
         run: node scripts/update-profile.mjs
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Guardar somente imagens alteradas
+      - name: Save changed chart images
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add assets/activity.svg
           if ! git diff --cached --quiet; then
-            git commit -m 'Atualiza gráficos locais do perfil'
+            git commit -m 'Update local profile charts'
             git push
           fi

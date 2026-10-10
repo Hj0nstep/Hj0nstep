@@ -17,7 +17,7 @@ function github(endpoint, body) {
     maxBuffer: 8 * 1024 * 1024,
   });
   if (result.status !== 0)
-    throw Error('GitHub não respondeu à consulta; os gráficos anteriores foram preservados.');
+    throw Error('GitHub did not return the requested data; existing charts were preserved.');
   return JSON.parse(result.stdout);
 }
 const svg = (width, height, title, body) =>
@@ -38,16 +38,16 @@ if (
   !days?.length ||
   days.some((day) => !Number.isInteger(day.contributionCount) || day.contributionCount < 0)
 )
-  throw Error('Calendário inválido.');
+  throw Error('Invalid contribution calendar.');
 const max = Math.max(1, ...days.map((day) => day.contributionCount));
 const points = days.map((day, i) => `${36 + i * 25},${180 - (day.contributionCount / max) * 105}`).join(' ');
 const graph = svg(
   840,
   255,
-  `Atividade de ${login}: ${days.length} dias, consultada em ${today}`,
+  `Activity for ${login}: ${days.length} days, checked on ${today}`,
   [
-    text(28, 32, 'Atividade no GitHub', 19, '#E5E5EA'),
-    text(28, 54, 'Contribuições por dia · dados consultados na API GitHub', 12, '#9A9AA2'),
+    text(28, 32, 'GitHub activity', 19, '#E5E5EA'),
+    text(28, 54, 'Daily contributions from the GitHub API', 12, '#9A9AA2'),
     `<path d="M36 180H800" stroke="#303038"/>`,
     `<polyline points="${points}" stroke="#E0AA3E" stroke-width="3" fill="none"/>`,
     ...days.map(
@@ -57,9 +57,9 @@ const graph = svg(
     text(
       28,
       209,
-      `${days[0].date} — ${days.at(-1).date} · ${days.reduce((sum, day) => sum + day.contributionCount, 0)} contribuições no período`,
+      `${days[0].date} to ${days.at(-1).date} · ${days.reduce((sum, day) => sum + day.contributionCount, 0)} contributions in this period`,
     ),
-    text(28, 234, `Atualizado em ${today} · agregado, sem nomes de repositórios privados`, 11, '#9A9AA2'),
+    text(28, 234, `Updated ${today} · totals only; private repository names are not shown`, 11, '#9A9AA2'),
   ].join(''),
 );
 await writeFile(resolve(root, 'assets/activity.svg'), graph);
@@ -74,7 +74,7 @@ if (process.argv.includes('--languages')) {
   const totals = {};
   for (const repo of repositories) {
     for (const [language, bytes] of Object.entries(github(`repos/${repo.full_name}/languages`))) {
-      if (!Number.isSafeInteger(bytes) || bytes < 0) throw Error('Métrica de linguagens inválida.');
+      if (!Number.isSafeInteger(bytes) || bytes < 0) throw Error('Invalid language metric.');
       totals[language] = (totals[language] || 0) + bytes;
     }
   }
@@ -82,7 +82,7 @@ if (process.argv.includes('--languages')) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 8);
   const total = Object.values(totals).reduce((sum, bytes) => sum + bytes, 0);
-  if (!total || !entries.length) throw Error('Linguagens sem dados; imagem anterior preservada.');
+  if (!total || !entries.length) throw Error('No language data; the existing image was preserved.');
   const colors = {
     TypeScript: '#3178C6',
     JavaScript: '#F1E05A',
@@ -94,8 +94,8 @@ if (process.argv.includes('--languages')) {
   };
   const height = 94 + entries.length * 24;
   const body = [
-    text(20, 30, 'My Programming Languages', 17, '#E5E5EA'),
-    text(20, 51, 'Por bytes de código · repositórios acessíveis sem forks', 11, '#9A9AA2'),
+    text(20, 30, 'My programming languages', 17, '#E5E5EA'),
+    text(20, 51, 'By code size · accessible repos, no forks', 11, '#9A9AA2'),
   ];
   entries.forEach(([language, bytes], index) => {
     const y = 80 + index * 24;
@@ -109,15 +109,15 @@ if (process.argv.includes('--languages')) {
     text(
       20,
       height - 12,
-      `Fonte: API GitHub · ${repositories.length} repositórios · ${today}`,
+      `GitHub API · ${repositories.length} repositories · ${today}`,
       10,
       '#9A9AA2',
     ),
   );
   await writeFile(
     resolve(root, 'assets/top-langs.svg'),
-    svg(340, height, 'Linguagens dos repositórios consultados', body.join('')),
+    svg(340, height, 'Languages in the included repositories', body.join('')),
   );
 }
 
-console.log(`Gráfico local atualizado: ${days.length} dias com dados GitHub reais.`);
+console.log(`Local chart updated: ${days.length} days of GitHub contribution data.`);
