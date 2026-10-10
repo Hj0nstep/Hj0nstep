@@ -1,6 +1,6 @@
 # Jonas Henrique
 
-Hi, I'm Jonas. I build tools and apps as I learn. Right now, I'm exploring Python, automation, and data: using code to handle repeated tasks and make information easier to work with.
+Hi, I'm Jonas, a Brazilian based in Rio de Janeiro. I build tools and apps as I learn. Right now, I'm exploring Python, automation, and data: using code to handle repeated tasks and make information easier to work with.
 
 I try new technologies by building projects. One of them is a Windows app that helps me organize TikTok channels and browser sessions.
 
