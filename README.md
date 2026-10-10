@@ -2,7 +2,7 @@
 
 Hi, I'm Jonas. I build tools and apps as I learn. Right now, I'm exploring Python, automation, and data: using code to handle repeated tasks and make information easier to work with.
 
-I also try new technologies in personal projects and my coursework at SENAC. One of my projects is a Windows app that helps me organize TikTok channels and browser sessions.
+I try new technologies by building projects. One of them is a Windows app that helps me organize TikTok channels and browser sessions.
 
 <div align="center">
 
@@ -23,8 +23,8 @@ I also try new technologies in personal projects and my coursework at SENAC. One
 ## Featured projects
 
 - Private project: details and source code are kept private.
-- Auction system: a Java desktop app built with Swing and JDBC for a SENAC course project. Source code is private.
-- InfoTechG: a Java app for managing a computer repair shop, also developed for SENAC. Source code is private.
+- Auction system: a Java desktop app built with Swing and JDBC. Source code is private.
+- InfoTechG: a Java app for managing a computer repair shop. Source code is private.
 
 ## Languages and tools
 
