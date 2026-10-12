@@ -5,6 +5,13 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const login = 'Hj0nstep';
 const today = new Date().toISOString().slice(0, 10);
+const theme = {
+  background: '#101012',
+  border: '#303034',
+  accent: '#FF6B1C',
+  text: '#E8E8E5',
+  muted: '#A8A8AD',
+};
 const escape = (value) =>
   String(value).replace(
     /[&<>"']/g,
@@ -21,8 +28,8 @@ function github(endpoint, body) {
   return JSON.parse(result.stdout);
 }
 const svg = (width, height, title, body) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" font-family="Segoe UI,Arial,sans-serif"><title>${escape(title)}</title><rect x=".5" y=".5" width="${width - 1}" height="${height - 1}" rx="14" fill="#0D0D0F" stroke="#303038"/>${body}</svg>\n`;
-const text = (x, y, value, size = 12, color = '#C9C9CF') =>
+  `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" font-family="Segoe UI,Arial,sans-serif"><title>${escape(title)}</title><rect x=".5" y=".5" width="${width - 1}" height="${height - 1}" rx="14" fill="${theme.background}" stroke="${theme.border}"/>${body}</svg>\n`;
+const text = (x, y, value, size = 12, color = theme.text) =>
   `<text x="${x}" y="${y}" font-size="${size}" fill="${color}">${escape(value)}</text>`;
 await mkdir(resolve(root, 'assets'), { recursive: true });
 const calendar = github('graphql', {
@@ -46,20 +53,20 @@ const graph = svg(
   255,
   `Activity for ${login}: ${days.length} days, checked on ${today}`,
   [
-    text(28, 32, 'GitHub activity', 19, '#E5E5EA'),
-    text(28, 54, 'Daily contributions from the GitHub API', 12, '#9A9AA2'),
-    `<path d="M36 180H800" stroke="#303038"/>`,
-    `<polyline points="${points}" stroke="#E0AA3E" stroke-width="3" fill="none"/>`,
+    text(28, 32, 'GitHub activity', 19, theme.accent),
+    text(28, 54, 'Daily contributions from the GitHub API', 12, theme.muted),
+    `<path d="M36 180H800" stroke="${theme.border}"/>`,
+    `<polyline points="${points}" stroke="${theme.accent}" stroke-width="3" fill="none"/>`,
     ...days.map(
       (day, i) =>
-        `<circle cx="${36 + i * 25}" cy="${180 - (day.contributionCount / max) * 105}" r="3" fill="#E0AA3E"><title>${escape(day.date)}: ${day.contributionCount}</title></circle>`,
+        `<circle cx="${36 + i * 25}" cy="${180 - (day.contributionCount / max) * 105}" r="3" fill="${theme.accent}"><title>${escape(day.date)}: ${day.contributionCount}</title></circle>`,
     ),
     text(
       28,
       209,
       `${days[0].date} to ${days.at(-1).date} · ${days.reduce((sum, day) => sum + day.contributionCount, 0)} contributions in this period`,
     ),
-    text(28, 234, `Updated ${today} · totals only; private repository names are not shown`, 11, '#9A9AA2'),
+    text(28, 234, `Updated ${today} · totals only; private repository names are not shown`, 11, theme.muted),
   ].join(''),
 );
 await writeFile(resolve(root, 'assets/activity.svg'), graph);
@@ -84,23 +91,23 @@ if (process.argv.includes('--languages')) {
   const total = Object.values(totals).reduce((sum, bytes) => sum + bytes, 0);
   if (!total || !entries.length) throw Error('No language data; the existing image was preserved.');
   const colors = {
-    TypeScript: '#3178C6',
-    JavaScript: '#F1E05A',
-    Python: '#3572A5',
-    HTML: '#E34C26',
-    CSS: '#8064BD',
-    Java: '#B07219',
-    PowerShell: '#5391FE',
+    TypeScript: '#FF985C',
+    JavaScript: '#FFB181',
+    Python: theme.accent,
+    HTML: '#F5823C',
+    CSS: '#C2A092',
+    Java: '#D9AD96',
+    PowerShell: '#A8A8AD',
   };
   const height = 94 + entries.length * 24;
   const body = [
-    text(20, 30, 'My programming languages', 17, '#E5E5EA'),
-    text(20, 51, 'By code size · accessible repos, no forks', 11, '#9A9AA2'),
+    text(20, 30, 'My programming languages', 17, theme.accent),
+    text(20, 51, 'By code size · accessible repos, no forks', 11, theme.muted),
   ];
   entries.forEach(([language, bytes], index) => {
     const y = 80 + index * 24;
     body.push(
-      `<circle cx="24" cy="${y - 4}" r="5" fill="${colors[language] || '#9A9AA2'}"/>`,
+      `<circle cx="24" cy="${y - 4}" r="5" fill="${colors[language] || theme.muted}"/>`,
       text(38, y, language),
       text(235, y, `${((bytes / total) * 100).toFixed(1)}%`),
     );
@@ -111,7 +118,7 @@ if (process.argv.includes('--languages')) {
       height - 12,
       `GitHub API · ${repositories.length} repositories · ${today}`,
       10,
-      '#9A9AA2',
+      theme.muted,
     ),
   );
   await writeFile(

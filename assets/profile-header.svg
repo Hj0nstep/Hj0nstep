@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="180" viewBox="0 0 840 180" role="img" aria-labelledby="title desc">
+  <title id="title">Jonas Henrique</title>
+  <desc id="desc">Orange lettering on a charcoal background with subtle vertical stripes and angular orange trim.</desc>
+  <defs>
+    <pattern id="stripes" width="12" height="180" patternUnits="userSpaceOnUse">
+      <path d="M1 0V180 M4 0V180" stroke="#FFFFFF" stroke-opacity=".028"/>
+    </pattern>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#18181B"/>
+      <stop offset="1" stop-color="#0C0C0E"/>
+    </linearGradient>
+    <clipPath id="bounds"><rect width="840" height="180" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#bounds)">
+    <rect width="840" height="180" fill="url(#shade)"/>
+    <rect width="840" height="180" fill="url(#stripes)"/>
+    <path d="M0 143L152 173H688L840 143" fill="none" stroke="#FF6B1C" stroke-width="2"/>
+    <path d="M620 0L676 36H840" fill="none" stroke="#FF6B1C" stroke-width="3"/>
+    <path d="M654 0L690 23H840" fill="none" stroke="#FF6B1C" stroke-opacity=".16"/>
+    <rect x="32" y="40" width="4" height="76" rx="2" fill="#FF6B1C"/>
+    <text x="54" y="77" fill="#FF6B1C" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="46" letter-spacing="-.7">Jonas Henrique</text>
+    <text x="56" y="109" fill="#B4B4B8" font-family="Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="2">HJ0NSTEP</text>
+    <circle cx="735" cy="90" r="36" fill="#111113" stroke="#FF6B1C" stroke-width="2"/>
+    <text x="735" y="100" text-anchor="middle" fill="#FF6B1C" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="28">JH</text>
+  </g>
+</svg>
