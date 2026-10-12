@@ -6,19 +6,20 @@ I try new technologies through personal apps and automation projects. My work in
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=FF6B1C&center=true&vCenter=true&width=520&lines=Exploring+Python%2C+automation%2C+and+data;Learning+through+personal+projects;Corinthians+supporter" alt="Exploring Python, automation, and data. Learning through personal projects. Corinthians supporter." />
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=FF6B1C&center=true&vCenter=true&width=520&lines=Exploring+Python%2C+automation%2C+and+data;Learning+through+personal+projects" alt="Exploring Python, automation, and data. Learning through personal projects." />
+
+<br />
+<img src="assets/corinthians.svg" alt="Corinthians supporter" />
 
 </div>
 
 ## ![What I work with](assets/heading-work.svg)
 
 - Python and SQL for automation and working with data.
-- HTML and CSS to build and style web pages.
 - JavaScript, TypeScript, and React to make pages respond to clicks and user input.
 - Node.js to work on the code behind web apps.
 - Java, including Swing and JDBC, for desktop apps and database projects.
 - Electron and PowerShell for Windows apps and scripts.
-- Git and GitHub to save changes and keep track of my code.
 
 ## ![Featured projects](assets/heading-projects.svg)
 

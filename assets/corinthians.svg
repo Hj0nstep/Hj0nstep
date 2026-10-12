@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="268" height="36" viewBox="0 0 268 36" role="img" aria-labelledby="title">
+  <title id="title">Corinthians supporter</title>
+  <rect width="268" height="36" rx="5" fill="#000000"/>
+  <rect x="0" y="5" width="3" height="26" rx="1.5" fill="#FFFFFF"/>
+  <text x="140" y="25" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="17" fill="#FFFFFF">Corinthians supporter</text>
+</svg>
