@@ -1,40 +1,46 @@
 # ![Jonas Henrique](assets/profile-header.svg)
 
-Hi, I'm Jonas, a Brazilian based in Rio de Janeiro. I build tools and apps as I learn. Right now, I'm exploring Python, automation, and data: using code to handle repeated tasks and make information easier to work with.
-
-I try new technologies through personal apps and automation projects. My work includes desktop tools and ways to organize channels, videos, and editing tasks for platforms such as TikTok and YouTube.
+I'm Jonas, based in Rio de Janeiro, Brazil. **I build desktop apps and organization systems** for managing projects, records, and everyday tasks. My personal and academic projects cover business management, content workflows, and practical automation.
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=FF6B1C&center=true&vCenter=true&width=520&lines=Exploring+Python%2C+automation%2C+and+data;Learning+through+personal+projects" alt="Exploring Python, automation, and data. Learning through personal projects." />
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=FF6B1C&center=true&vCenter=true&width=520&lines=Building+desktop+apps;Organization+systems+and+automation" alt="Building desktop apps. Organization systems and automation." />
 
 </div>
 
-## ![What I work with](assets/heading-work.svg)
+## ![What I build](assets/heading-work.svg)
 
-- Python and SQL for automation and working with data.
-- JavaScript, TypeScript, and React to make pages respond to clicks and user input.
-- Node.js to work on the code behind web apps.
-- Java, including Swing and JDBC, for desktop apps and database projects.
-- Electron and PowerShell for Windows apps and scripts.
+- **Work organization:** project boards, tasks, study libraries, and focus sessions.
+- **Business management:** customer and product records, sales, and service orders.
+- **Content workflows:** channel organization and separate local browser sessions.
+- **Automation and data:** Python tools, database-backed apps, and Windows scripts.
 
 ## ![Featured projects](assets/heading-projects.svg)
 
-### Private project
+| Project | Purpose |
+| --- | --- |
+| **Editor Forge** | Windows app for Kanban tasks, study material, and focus sessions. |
+| **TokFury** | Windows app for organizing TikTok channels and browser sessions; in development. |
+| **InfoTechG** | Java / MySQL coursework: store records, sales, repair orders, and menus by user role. |
+| **Auction system** | Java / MySQL coursework for registering products and tracking sales. |
 
-Details and source code are kept private.
+I also have a private desktop analysis project whose details are kept private.
 
-### Auction system
+<details>
+<summary>More applications — Java study projects</summary>
 
-A desktop app for organizing products at an auction house. Users can register a product with its name and price, browse the product list, and mark an item as sold. A separate screen lists sold products, making it easier to check which sales have been recorded.
+| Application | Purpose |
+| --- | --- |
+| **Cenaflix** | Video registration and podcast records. |
+| **Appointment scheduler** | Register, list, and complete appointments. |
+| **Measurement log** | Record measurements with dates, times, and notes. |
+| **NutriSoft** | Screens for BMI, calorie, and macronutrient calculations. |
+| **Sales calculator** | Calculate prices with discounts. |
+| **Supermarket study** | Model products, shopping carts, and orders in a console exercise. |
 
-The app uses Java Swing for its screens and JDBC to save and read product records in MySQL. The screens, product data, and database operations are kept in separate classes, so each part has a clear job. Source code is private.
+</details>
 
-### InfoTechG
-
-A desktop app for a computer store and repair shop. It brings customer records, suppliers, products, sales, and repair orders into one place. Managers, salespeople, and technicians have different responsibilities, so the menu shows the sections each user is allowed to access.
-
-Built with Java Swing and a MySQL database connected through JDBC. Separate classes handle the screens, business data, and database queries. The project also includes requirements, diagrams, and screen sketches to explain how the app is organized. Source code is private.
+The project repositories are private; the Java study applications are coursework.
 
 ## ![Languages and tools](assets/heading-tools.svg)
 

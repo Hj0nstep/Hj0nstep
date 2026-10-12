@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="268" height="36" viewBox="0 0 268 36" role="img" aria-labelledby="title">
-  <title id="title">What I work with</title>
+  <title id="title">What I build</title>
   <rect width="268" height="36" rx="5" fill="#101012"/>
   <rect x="0" y="5" width="3" height="26" rx="1.5" fill="#FF6B1C"/>
-  <text x="15" y="26" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600" fill="#FF6B1C">What I work with</text>
+  <text x="15" y="26" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600" fill="#FF6B1C">What I build</text>
 </svg>
