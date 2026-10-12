@@ -8,9 +8,6 @@ I try new technologies through personal apps and automation projects. My work in
 
 <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=FF6B1C&center=true&vCenter=true&width=520&lines=Exploring+Python%2C+automation%2C+and+data;Learning+through+personal+projects" alt="Exploring Python, automation, and data. Learning through personal projects." />
 
-<br />
-<img src="assets/corinthians.svg" alt="Corinthians supporter" />
-
 </div>
 
 ## ![What I work with](assets/heading-work.svg)
