@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { collectProfile } from './profile-data.mjs';
 import { renderCharts, updateReadme } from './profile-svg.mjs';
+import { retainContributionHistory, contributionSnapshot } from './contribution-snapshot.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 function github(endpoint, body, token = undefined) {
@@ -26,12 +27,25 @@ try {
 }
 const includePrivate =
   process.env.PROFILE_INCLUDE_PRIVATE === 'true' || Boolean(process.env.PROFILE_READ_TOKEN);
-const data = await collectProfile(github, new Date(), {
+const collected = await collectProfile(github, new Date(), {
   includePrivate,
   cachedLanguages,
   profileGithub: (endpoint, body) => github(endpoint, body, process.env.PROFILE_READ_TOKEN),
   languageGithub: (endpoint, body) => github(endpoint, body, process.env.PROFILE_READ_TOKEN),
 });
+let previousActivity;
+try {
+  previousActivity = JSON.parse(
+    await readFile(resolve(root, 'assets/contribution-snapshot.json'), 'utf8'),
+  );
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
+const data = retainContributionHistory(collected, previousActivity);
+if (data.activityPending)
+  console.log(
+    '::warning::GitHub returned an empty contribution calendar; keeping the last verified activity snapshot with its original timestamp.',
+  );
 if (!includePrivate && data.languageInventory.scope === 'all-owned')
   console.log(
     '::warning::Private language inventory preserved at its original check time; configure PROFILE_READ_TOKEN to refresh it remotely.',
@@ -47,12 +61,17 @@ await writeFile(
   resolve(root, 'assets/language-inventory.json'),
   JSON.stringify(data.languageInventory, null, 2) + '\n',
 );
+await writeFile(
+  resolve(root, 'assets/contribution-snapshot.json'),
+  JSON.stringify(contributionSnapshot(data), null, 2) + '\n',
+);
 await writeFile(resolve(root, 'README.md'), readme);
 console.log(
   JSON.stringify({
     checkedAt: data.checkedAt,
     days: data.days.length,
     publicRepositories: data.publicRepositories,
+    activityPending: data.activityPending,
     languageCount: Object.keys(data.languageBytes).length,
     languageScope: data.languageInventory.scope,
     charts: Object.keys(charts),

@@ -19,3 +19,7 @@ Only aggregate metrics, chart images and the managed README chart region are gen
 Verification: `node --test scripts/*.test.mjs`; `node scripts/update-profile.mjs`. The latter makes read-only GitHub API calls and rewrites only the managed README section and generated metrics/cards. Do not print tokens or add them to source. Use only the dedicated read credential explicitly configured by the owner; never copy the local CLI session into repository secrets. GitHub can pause schedules in inactive public repositories; inspect the update-status badge if freshness stops advancing.
 
 Sources: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule ; https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference ; https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user .
+
+## Private activity visibility
+
+The owner must leave “Make profile private and hide activity” OFF and “Include private contributions on my profile” ON, then save preferences. Making the profile public does not make any private repository public. A hidden profile can return an entirely empty contribution calendar. If a zero calendar replaces previously verified nonzero history, the renderer preserves the last verified contribution snapshot, labels its original timestamp, and warns while rechecking automatically; fresh language metrics continue updating. Once GitHub returns counts again, the pending state clears automatically.

@@ -27,6 +27,10 @@ function checkedLabel(data) {
 }
 
 export function renderCharts(data) {
+  const activityTime = checkedLabel({
+    ...data,
+    checkedAt: data.activityCheckedAt || data.checkedAt,
+  });
   const max = Math.max(1, ...data.days.map((day) => day.contributions));
   const position = (day, index) => [
     36 + index * (750 / (data.days.length - 1)),
@@ -36,10 +40,18 @@ export function renderCharts(data) {
   const activity = svg(
     840,
     255,
-    `Activity for ${data.login}, checked ${checkedLabel(data)}`,
+    `Activity for ${data.login}, verified ${activityTime}`,
     [
       text(28, 32, 'GitHub activity', 19, theme.accent),
-      text(28, 54, 'GitHub contributions · public + shared private activity', 12, theme.muted),
+      text(
+        28,
+        54,
+        data.activityPending
+          ? 'Last verified GitHub contribution snapshot'
+          : 'GitHub contributions · public + shared private activity',
+        12,
+        theme.muted,
+      ),
       `<path d="M36 180H800" stroke="${theme.border}"/>`,
       `<polyline points="${points}" stroke="${theme.accent}" stroke-width="3" fill="none"/>`,
       ...data.days.map((day, index) => {
@@ -54,7 +66,9 @@ export function renderCharts(data) {
       text(
         28,
         234,
-        `Checked ${checkedLabel(data)} · GitHub may index contributions later`,
+        data.activityPending
+          ? `Verified ${activityTime} · rechecking GitHub calendar`
+          : `Checked ${activityTime} · GitHub may index contributions later`,
         11,
         theme.muted,
       ),
@@ -102,7 +116,10 @@ export function renderCharts(data) {
     languagesBody.join(''),
   );
   const summaryRows = [
-    ['Contributions · past year', data.pastYearContributions],
+    [
+      data.activityPending ? 'Contributions · last verified' : 'Contributions · past year',
+      data.pastYearContributions,
+    ],
     ['Public repositories', data.publicRepositories],
     ['Stars · public originals', data.stars],
     ['Followers', data.followers],

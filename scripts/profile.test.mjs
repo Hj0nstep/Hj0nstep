@@ -179,3 +179,27 @@ test('language chart renders every language beyond eight with enough room and pr
   assert.ok(output.includes('height="448"'));
   assert.ok(output.includes('04/11/2026'));
 });
+
+test('sudden zero calendar preserves original verified timestamp without preventing language refresh', async () => {
+  const { retainContributionHistory } = await import('./contribution-snapshot.mjs');
+  const previous = await collectProfile(fakeGithub().github, now);
+  const empty = {
+    ...previous,
+    checkedAt: '2026-11-05T18:00:00Z',
+    pastYearContributions: 0,
+    days: previous.days.map((day) => ({ ...day, contributions: 0 })),
+    languageBytes: { Java: 999 },
+  };
+  const preserved = retainContributionHistory(empty, previous);
+  assert.equal(preserved.activityPending, true);
+  assert.equal(preserved.activityCheckedAt, previous.checkedAt);
+  assert.deepEqual(preserved.days, previous.days);
+  assert.deepEqual(preserved.languageBytes, { Java: 999 });
+  assert.ok(renderCharts(preserved)['activity.svg'].includes('rechecking GitHub calendar'));
+  const recovered = retainContributionHistory(
+    { ...previous, checkedAt: '2026-11-05T19:00:00Z' },
+    preserved,
+  );
+  assert.equal(recovered.activityPending, false);
+  assert.equal(recovered.activityCheckedAt, '2026-11-05T19:00:00Z');
+});
