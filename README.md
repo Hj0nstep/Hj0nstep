@@ -24,6 +24,13 @@ I'm Jonas, based in Rio de Janeiro, Brazil. **I build desktop apps and organizat
 | **InfoTechG** | Java / MySQL coursework: store records, sales, repair orders, and menus by user role. |
 | **Auction system** | Java / MySQL coursework for registering products and tracking sales. |
 
+### Project collections
+
+- **[SENAC — technical course projects](https://github.com/Hj0nstep/senac-estudos):** coursework organized by project, with activities, documentation and tests.
+- **[My project catalog](https://github.com/Hj0nstep/meus-projetos):** grouped collections for coursework, work tools, web studies and references.
+
+These collections are private and require access. Their links do not make the repositories public.
+
 I also have a private desktop analysis project whose details are kept private.
 
 <details>
