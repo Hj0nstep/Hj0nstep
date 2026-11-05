@@ -1,8 +1,14 @@
 name: Update profile charts
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'README.md'
+      - '.github/workflows/profile-assets.yml'
   workflow_dispatch:
   schedule:
-    - cron: '23 9 * * *'
+    - cron: '17 */4 * * *'
 permissions:
   contents: write
 concurrency:
@@ -11,11 +17,14 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '24'
+      - name: Test profile data and rendering
+        run: node --test scripts/*.test.mjs
       - name: Fetch GitHub data and generate local charts
         run: node scripts/update-profile.mjs
         env:
@@ -24,7 +33,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/activity.svg
+          git add assets/activity.svg assets/top-langs.svg assets/stats.svg assets/profile-metrics.json README.md
           if ! git diff --cached --quiet; then
             git commit -m 'Update local profile charts'
             git push

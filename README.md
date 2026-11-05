@@ -54,10 +54,14 @@ The project repositories are private; the Java study applications are coursework
 
 <div align="center">
 
-<img height="195px" src="https://github-readme-stats-eight-theta.vercel.app/api?username=Hj0nstep&show_icons=true&include_all_commits=true&locale=en&hide_border=true&bg_color=101012&title_color=FF6B1C&icon_color=FF6B1C&text_color=E8E8E5&ring_color=FF6B1C" alt="GitHub statistics" />
-<img width="340px" src="assets/top-langs.svg" alt="Programming languages by code size in the repositories included in the chart" />
+<!-- profile-metrics:start -->
+<img width="480" src="assets/stats.svg?v=6764ca5570faad9e" alt="GitHub overview from the official API" />
+<img width="340" src="assets/top-langs.svg?v=6764ca5570faad9e" alt="Programming languages by code size in public repositories, excluding forks" />
 
-<img width="100%" src="assets/activity.svg" alt="Daily GitHub contributions, with the date the chart was last updated" />
+<img width="100%" src="assets/activity.svg?v=6764ca5570faad9e" alt="Daily contributions returned by GitHub, with the last check time" />
+<!-- profile-metrics:end -->
+
+[![Automatic profile updates](https://github.com/Hj0nstep/Hj0nstep/actions/workflows/profile-assets.yml/badge.svg)](https://github.com/Hj0nstep/Hj0nstep/actions/workflows/profile-assets.yml)
 
 <img src="https://visitor-badge.laobi.icu/badge?page_id=Hj0nstep.Hj0nstep&amp;left_text=Profile%20views&amp;left_color=%23101012&amp;right_color=%23FF6B1C" alt="Profile view counter" />
 
