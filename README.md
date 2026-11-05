@@ -55,10 +55,10 @@ The project repositories are private; the Java study applications are coursework
 <div align="center">
 
 <!-- profile-metrics:start -->
-<img width="480" src="assets/stats.svg?v=6764ca5570faad9e" alt="GitHub overview from the official API" />
-<img width="340" src="assets/top-langs.svg?v=6764ca5570faad9e" alt="Programming languages by code size in public repositories, excluding forks" />
+<img width="480" src="assets/stats.svg?v=50ddbf4014aa8c95" alt="GitHub overview from the official API" />
+<img width="340" src="assets/top-langs.svg?v=50ddbf4014aa8c95" alt="Programming languages by code size in public repositories, excluding forks" />
 
-<img width="100%" src="assets/activity.svg?v=6764ca5570faad9e" alt="Daily contributions returned by GitHub, with the last check time" />
+<img width="100%" src="assets/activity.svg?v=50ddbf4014aa8c95" alt="Daily contributions returned by GitHub, with the last check time" />
 <!-- profile-metrics:end -->
 
 [![Automatic profile updates](https://github.com/Hj0nstep/Hj0nstep/actions/workflows/profile-assets.yml/badge.svg)](https://github.com/Hj0nstep/Hj0nstep/actions/workflows/profile-assets.yml)
