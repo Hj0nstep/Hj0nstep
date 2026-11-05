@@ -1,3 +1,4 @@
+import { collectLanguages, validateInventory } from './language-inventory.mjs';
 export const profileLogin = 'Hj0nstep';
 export const profileTimeZone = 'America/Sao_Paulo';
 
@@ -7,11 +8,11 @@ function count(value, label) {
   return value;
 }
 
-export async function collectProfile(github, now = new Date()) {
+export async function collectProfile(github, now = new Date(), options = {}) {
   const today = new Intl.DateTimeFormat('en-CA', { timeZone: profileTimeZone }).format(now);
-  const response = await github('graphql', {
+  const response = await (options.profileGithub || github)('graphql', {
     query:
-      'query($login:String!){user(login:$login){followers{totalCount} contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}',
+      'query($login:String!){user(login:$login){followers{totalCount} contributionsCollection{restrictedContributionsCount hasAnyRestrictedContributions contributionCalendar{totalContributions weeks{contributionDays{date contributionCount}}}}}}',
     variables: { login: profileLogin },
   });
   const user = response.data?.user;
@@ -52,25 +53,19 @@ export async function collectProfile(github, now = new Date()) {
     if (page === 100) throw Error('Repository pagination did not finish.');
   }
   const originalRepositories = repositories.filter((repo) => !repo.fork);
-  const languageBytes = {};
-  for (const repo of originalRepositories) {
-    if (!/^[\w.-]+\/[\w.-]+$/.test(repo.full_name))
-      throw Error('Invalid public repository identifier.');
-    const languages = await github(`repos/${repo.full_name}/languages`);
-    if (!languages || Array.isArray(languages) || typeof languages !== 'object')
-      throw Error('Invalid language data.');
-    for (const [language, bytes] of Object.entries(languages))
-      languageBytes[language] = count(
-        (languageBytes[language] || 0) + count(bytes, 'language size'),
-        'language total',
-      );
-  }
+  const inventory = options.includePrivate
+    ? await collectLanguages(options.languageGithub || github, now, true)
+    : options.cachedLanguages
+      ? validateInventory(options.cachedLanguages)
+      : await collectLanguages(github, now, false);
   // Only aggregate data leaves this function; never publish repository identities.
   return {
     login: profileLogin,
     checkedAt: now.toISOString(),
     timeZone: profileTimeZone,
-    repositoryScope: 'Public owned repositories; languages and stars exclude forks',
+    repositoryScope:
+      'Public repository count; stars exclude forks; language scope recorded separately',
+    languageInventory: inventory,
     contributionScope:
       'Contribution counts returned by GitHub, subject to GitHub visibility and indexing',
     publicRepositories: repositories.length,
@@ -80,8 +75,11 @@ export async function collectProfile(github, now = new Date()) {
       0,
     ),
     followers: count(user.followers?.totalCount, 'followers'),
+    privateContributionsReported: user.contributionsCollection.restrictedContributionsCount ?? null,
+    hasSharedPrivateContributions:
+      user.contributionsCollection.hasAnyRestrictedContributions ?? null,
     pastYearContributions: count(calendar.totalContributions, 'past-year contributions'),
     days,
-    languageBytes,
+    languageBytes: inventory.languageBytes,
   };
 }

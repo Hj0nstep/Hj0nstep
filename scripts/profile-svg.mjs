@@ -39,7 +39,7 @@ export function renderCharts(data) {
     `Activity for ${data.login}, checked ${checkedLabel(data)}`,
     [
       text(28, 32, 'GitHub activity', 19, theme.accent),
-      text(28, 54, 'Daily contributions reported by GitHub', 12, theme.muted),
+      text(28, 54, 'GitHub contributions · public + shared private activity', 12, theme.muted),
       `<path d="M36 180H800" stroke="${theme.border}"/>`,
       `<polyline points="${points}" stroke="${theme.accent}" stroke-width="3" fill="none"/>`,
       ...data.days.map((day, index) => {
@@ -61,29 +61,44 @@ export function renderCharts(data) {
     ].join(''),
   );
 
-  const entries = Object.entries(data.languageBytes)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 8);
+  const entries = Object.entries(data.languageBytes).sort((a, b) => b[1] - a[1]);
+  const languageHeight = Math.max(286, 112 + entries.length * 24);
+  const allOwned = data.languageInventory.scope === 'all-owned';
   const total = Object.values(data.languageBytes).reduce((sum, bytes) => sum + bytes, 0);
   const languagesBody = [
     text(20, 30, 'My programming languages', 17, theme.accent),
-    text(20, 51, 'Code size · public repositories, no forks', 11, theme.muted),
+    text(
+      20,
+      51,
+      allOwned
+        ? 'All owned repos · public + private + forks'
+        : 'Public owned repositories · including forks',
+      11,
+      theme.muted,
+    ),
   ];
-  if (!total)
-    languagesBody.push(text(20, 90, 'No public language data available.', 12, theme.muted));
+  if (!total) languagesBody.push(text(20, 90, 'No language data available.', 12, theme.muted));
   entries.forEach(([language, bytes], index) => {
     const y = 80 + index * 24;
     languagesBody.push(
       `<circle cx="24" cy="${y - 4}" r="5" fill="${theme.accent}"/>`,
       text(38, y, language),
-      text(255, y, `${((bytes / total) * 100).toFixed(1)}%`),
+      text(255, y, `${(bytes / total) * 100 < 0.1 ? '<0.1' : ((bytes / total) * 100).toFixed(1)}%`),
     );
   });
-  languagesBody.push(text(20, 265, `Checked ${checkedLabel(data)}`, 10, theme.muted));
+  languagesBody.push(
+    text(
+      20,
+      languageHeight - 16,
+      `Inventory: ${checkedLabel({ ...data, checkedAt: data.languageInventory.checkedAt })}`,
+      10,
+      theme.muted,
+    ),
+  );
   const languages = svg(
     340,
-    286,
-    'Languages by code size in public owned repositories, excluding forks',
+    languageHeight,
+    'All languages detected by GitHub in the included owned repositories',
     languagesBody.join(''),
   );
   const summaryRows = [
@@ -114,7 +129,7 @@ export function updateReadme(readme, charts) {
     .update(Object.values(charts).join(''))
     .digest('hex')
     .slice(0, 16);
-  const block = `<!-- profile-metrics:start -->\n<img width="480" src="assets/stats.svg?v=${hash}" alt="GitHub overview from the official API" />\n<img width="340" src="assets/top-langs.svg?v=${hash}" alt="Programming languages by code size in public repositories, excluding forks" />\n\n<img width="100%" src="assets/activity.svg?v=${hash}" alt="Daily contributions returned by GitHub, with the last check time" />\n<!-- profile-metrics:end -->`;
+  const block = `<!-- profile-metrics:start -->\n<img width="480" src="assets/stats.svg?v=${hash}" alt="GitHub overview from the official API" />\n<img width="340" src="assets/top-langs.svg?v=${hash}" alt="All detected languages by code size; repository scope and inventory check time shown in chart" />\n\n<img width="100%" src="assets/activity.svg?v=${hash}" alt="Daily contributions returned by GitHub, with the last check time" />\n<!-- profile-metrics:end -->`;
   if (
     !readme.includes('<!-- profile-metrics:start -->') ||
     !readme.includes('<!-- profile-metrics:end -->')

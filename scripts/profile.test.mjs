@@ -27,7 +27,8 @@ function fakeGithub(calendar = fixture()) {
     github: (endpoint) => {
       requested.push(endpoint);
       if (endpoint === 'graphql') return calendar;
-      if (endpoint.startsWith('users/'))
+      if (endpoint === 'user') return { login: 'Hj0nstep' };
+      if (endpoint.startsWith('users/') || endpoint.startsWith('user/repos'))
         return [
           {
             private: false,
@@ -53,12 +54,14 @@ function fakeGithub(calendar = fixture()) {
         ];
       if (endpoint === 'repos/Hj0nstep/public-fictional/languages')
         return { TypeScript: 80, Python: 20 };
+      if (endpoint === 'repos/Hj0nstep/fork-fictional/languages') return { Rust: 5 };
+      if (endpoint === 'repos/Hj0nstep/private-fictional/languages') return { Java: 100 };
       throw Error('Unexpected API request');
     },
   };
 }
 
-test('metrics aggregate public data and exclude private/fork code without leaking repository identifiers', async () => {
+test('public mode excludes private code but includes all owned forks without leaking identifiers', async () => {
   const fake = fakeGithub();
   const data = await collectProfile(fake.github, now);
   assert.equal(data.days.length, 31);
@@ -66,7 +69,7 @@ test('metrics aggregate public data and exclude private/fork code without leakin
   assert.equal(data.publicRepositories, 2);
   assert.equal(data.originalPublicRepositories, 1);
   assert.equal(data.stars, 3);
-  assert.deepEqual(data.languageBytes, { TypeScript: 80, Python: 20 });
+  assert.deepEqual(data.languageBytes, { TypeScript: 80, Python: 20, Rust: 5 });
   assert.equal(JSON.stringify(data).includes('fictional'), false);
   assert.equal(
     fake.requested.some((endpoint) => endpoint.includes('/private-')),
@@ -74,7 +77,7 @@ test('metrics aggregate public data and exclude private/fork code without leakin
   );
   assert.equal(
     fake.requested.some((endpoint) => endpoint.includes('/fork-')),
-    false,
+    true,
   );
 });
 
@@ -131,4 +134,48 @@ test('cache keys refresh when data changes and edits preserve content outside ma
   data.followers++;
   assert.notEqual(updateReadme(output, renderCharts(data)), output);
   assert.throws(() => updateReadme('No managed region', {}), /missing/);
+});
+
+test('owner-authorized inventory includes private languages and caches only anonymous aggregate data', async () => {
+  const fake = fakeGithub();
+  const full = await collectProfile(fake.github, now, { includePrivate: true });
+  assert.equal(full.languageInventory.scope, 'all-owned');
+  assert.equal(full.languageInventory.repositoryCount, 3);
+  assert.equal(full.languageInventory.privateRepositoryCount, 1);
+  assert.deepEqual(full.languageBytes, { TypeScript: 80, Python: 20, Rust: 5, Java: 100 });
+  assert.equal(JSON.stringify(full).includes('private-fictional'), false);
+  const publicOnly = fakeGithub();
+  const refreshed = await collectProfile(publicOnly.github, new Date('2026-11-05T16:00:00Z'), {
+    cachedLanguages: full.languageInventory,
+  });
+  assert.deepEqual(refreshed.languageBytes, full.languageBytes);
+  assert.equal(refreshed.languageInventory.checkedAt, full.languageInventory.checkedAt);
+  assert.equal(
+    publicOnly.requested.some((url) => url.endsWith('/languages')),
+    false,
+  );
+});
+
+test('private mode rejects a different authenticated account', async () => {
+  const fake = fakeGithub();
+  await assert.rejects(
+    collectProfile(
+      (endpoint) => (endpoint === 'user' ? { login: 'someone-else' } : fake.github(endpoint)),
+      now,
+      { includePrivate: true },
+    ),
+    /profile owner/,
+  );
+});
+
+test('language chart renders every language beyond eight with enough room and preserves independent inventory date', async () => {
+  const data = await collectProfile(fakeGithub().github, now);
+  data.languageBytes = Object.fromEntries(
+    Array.from({ length: 14 }, (_, n) => [`Language${n}`, n + 1]),
+  );
+  data.languageInventory.checkedAt = '2026-11-04T15:00:00Z';
+  const output = renderCharts(data)['top-langs.svg'];
+  for (let n = 0; n < 14; n++) assert.ok(output.includes(`>Language${n}<`));
+  assert.ok(output.includes('height="448"'));
+  assert.ok(output.includes('04/11/2026'));
 });
