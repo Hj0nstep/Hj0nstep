@@ -1,14 +1,10 @@
 {
-  "checkedAt": "2026-11-08T20:29:06.368Z",
-  "activityCheckedAt": "2026-11-08T20:29:06.368Z",
+  "checkedAt": "2026-11-09T06:23:58.051Z",
+  "activityCheckedAt": "2026-11-09T06:23:58.051Z",
   "pastYearContributions": 188,
   "privateContributionsReported": 153,
   "hasSharedPrivateContributions": true,
   "days": [
-    {
-      "date": "2026-10-09",
-      "contributions": 2
-    },
     {
       "date": "2026-10-10",
       "contributions": 6
@@ -127,6 +123,10 @@
     },
     {
       "date": "2026-11-08",
+      "contributions": 0
+    },
+    {
+      "date": "2026-11-09",
       "contributions": 0
     }
   ]
