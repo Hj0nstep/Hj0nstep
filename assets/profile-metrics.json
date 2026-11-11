@@ -1,30 +1,30 @@
 {
   "login": "Hj0nstep",
-  "checkedAt": "2026-11-11T16:09:21.902Z",
+  "checkedAt": "2026-11-11T22:41:20.097Z",
   "timeZone": "America/Sao_Paulo",
   "repositoryScope": "Public repository count; stars exclude forks; language scope recorded separately",
   "languageInventory": {
     "version": 1,
     "login": "Hj0nstep",
-    "checkedAt": "2026-11-11T16:09:21.902Z",
+    "checkedAt": "2026-11-11T22:41:20.097Z",
     "scope": "all-owned",
-    "repositoryCount": 35,
-    "privateRepositoryCount": 20,
+    "repositoryCount": 37,
+    "privateRepositoryCount": 22,
     "includesForks": true,
     "languageBytes": {
-      "HTML": 1658023,
-      "CSS": 413292,
+      "HTML": 1677039,
+      "CSS": 418955,
       "Python": 7017285,
-      "JavaScript": 648380,
+      "JavaScript": 662300,
       "Batchfile": 15021,
       "VBScript": 1464,
       "PowerShell": 110689,
       "Shell": 3370,
       "TypeScript": 4774327,
       "C#": 7532,
-      "Astro": 111351,
+      "Java": 401534,
+      "Astro": 111234,
       "NSIS": 3615,
-      "Java": 355245,
       "Portugol": 2845
     }
   },
@@ -33,9 +33,9 @@
   "originalPublicRepositories": 11,
   "stars": 1,
   "followers": 2,
-  "privateContributionsReported": 154,
+  "privateContributionsReported": 165,
   "hasSharedPrivateContributions": true,
-  "pastYearContributions": 189,
+  "pastYearContributions": 200,
   "days": [
     {
       "date": "2026-10-12",
@@ -159,25 +159,25 @@
     },
     {
       "date": "2026-11-11",
-      "contributions": 1
+      "contributions": 12
     }
   ],
   "languageBytes": {
-    "HTML": 1658023,
-    "CSS": 413292,
+    "HTML": 1677039,
+    "CSS": 418955,
     "Python": 7017285,
-    "JavaScript": 648380,
+    "JavaScript": 662300,
     "Batchfile": 15021,
     "VBScript": 1464,
     "PowerShell": 110689,
     "Shell": 3370,
     "TypeScript": 4774327,
     "C#": 7532,
-    "Astro": 111351,
+    "Java": 401534,
+    "Astro": 111234,
     "NSIS": 3615,
-    "Java": 355245,
     "Portugol": 2845
   },
-  "activityCheckedAt": "2026-11-11T16:09:21.902Z",
+  "activityCheckedAt": "2026-11-11T22:41:20.097Z",
   "activityPending": false
 }
