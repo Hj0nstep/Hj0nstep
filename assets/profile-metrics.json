@@ -1,26 +1,26 @@
 {
   "login": "Hj0nstep",
-  "checkedAt": "2026-11-13T19:40:16.078Z",
+  "checkedAt": "2026-11-14T00:52:42.909Z",
   "timeZone": "America/Sao_Paulo",
   "repositoryScope": "Public repository count; stars exclude forks; language scope recorded separately",
   "languageInventory": {
     "version": 1,
     "login": "Hj0nstep",
-    "checkedAt": "2026-11-13T19:40:16.078Z",
+    "checkedAt": "2026-11-14T00:52:42.909Z",
     "scope": "all-owned",
     "repositoryCount": 37,
     "privateRepositoryCount": 22,
     "includesForks": true,
     "languageBytes": {
-      "HTML": 1677039,
-      "CSS": 418955,
-      "Python": 7017285,
-      "JavaScript": 662300,
-      "Batchfile": 15021,
-      "VBScript": 1464,
-      "PowerShell": 110689,
-      "Shell": 3370,
-      "TypeScript": 4774327,
+      "HTML": 1122842,
+      "CSS": 451452,
+      "Python": 15773762,
+      "TypeScript": 5151451,
+      "JavaScript": 702012,
+      "Batchfile": 38961,
+      "PowerShell": 141375,
+      "VBScript": 2189,
+      "Shell": 4237,
       "C#": 7532,
       "Java": 401534,
       "Astro": 111497,
@@ -33,9 +33,9 @@
   "originalPublicRepositories": 11,
   "stars": 1,
   "followers": 2,
-  "privateContributionsReported": 166,
+  "privateContributionsReported": 232,
   "hasSharedPrivateContributions": true,
-  "pastYearContributions": 201,
+  "pastYearContributions": 267,
   "days": [
     {
       "date": "2026-10-14",
@@ -151,33 +151,33 @@
     },
     {
       "date": "2026-11-11",
-      "contributions": 13
+      "contributions": 24
     },
     {
       "date": "2026-11-12",
-      "contributions": 0
+      "contributions": 27
     },
     {
       "date": "2026-11-13",
-      "contributions": 0
+      "contributions": 14
     }
   ],
   "languageBytes": {
-    "HTML": 1677039,
-    "CSS": 418955,
-    "Python": 7017285,
-    "JavaScript": 662300,
-    "Batchfile": 15021,
-    "VBScript": 1464,
-    "PowerShell": 110689,
-    "Shell": 3370,
-    "TypeScript": 4774327,
+    "HTML": 1122842,
+    "CSS": 451452,
+    "Python": 15773762,
+    "TypeScript": 5151451,
+    "JavaScript": 702012,
+    "Batchfile": 38961,
+    "PowerShell": 141375,
+    "VBScript": 2189,
+    "Shell": 4237,
     "C#": 7532,
     "Java": 401534,
     "Astro": 111497,
     "NSIS": 3615,
     "Portugol": 2845
   },
-  "activityCheckedAt": "2026-11-13T19:40:16.078Z",
+  "activityCheckedAt": "2026-11-14T00:52:42.909Z",
   "activityPending": false
 }
