@@ -1,14 +1,10 @@
 {
-  "checkedAt": "2026-11-14T00:52:42.909Z",
-  "activityCheckedAt": "2026-11-14T00:52:42.909Z",
-  "pastYearContributions": 267,
-  "privateContributionsReported": 232,
+  "checkedAt": "2026-11-14T11:27:06.550Z",
+  "activityCheckedAt": "2026-11-14T11:27:06.550Z",
+  "pastYearContributions": 269,
+  "privateContributionsReported": 234,
   "hasSharedPrivateContributions": true,
   "days": [
-    {
-      "date": "2026-10-14",
-      "contributions": 0
-    },
     {
       "date": "2026-10-15",
       "contributions": 0
@@ -127,7 +123,11 @@
     },
     {
       "date": "2026-11-13",
-      "contributions": 14
+      "contributions": 15
+    },
+    {
+      "date": "2026-11-14",
+      "contributions": 1
     }
   ]
 }
